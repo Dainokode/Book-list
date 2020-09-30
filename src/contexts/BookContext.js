@@ -4,19 +4,14 @@ import { v4 as uuidv4 } from "uuid";
 export const BookContext = createContext();
 
 const BookContextProvider = ({ children }) => {
-  const [books, setBooks] = useState([
-    { title: "The Wolf Of Wall Street", id: uuidv4() },
-    { title: "How To Talk To Anyone", id: uuidv4() }
-  ]);
+  const [books, setBooks] = useState([]);
 
   const addBook = (title, author) => {
-    setBooks([...books], { title, author });
+    setBooks([...books, { title, author, id: uuidv4() }]);
   };
 
   const deleteBook = (id) => {
-    books.filter((book) => {
-      book !== id;
-    });
+    setBooks(books.filter((book) => book.id !== id));
   };
 
   return (

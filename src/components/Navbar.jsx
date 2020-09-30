@@ -3,10 +3,15 @@ import { BookContext } from "../contexts/BookContext";
 
 const Navbar = () => {
   const { books } = useContext(BookContext);
-  return (
+  return books.length ? (
+    <nav className="navbar">
+      <h1>Book List</h1>
+      <p>You have {books.length} books left to read</p>
+    </nav>
+  ) : (
     <nav className="navbar">
       <h1>Reading List</h1>
-      <p>You have {books.length} books left to read</p>
+      <p>No books left to read.</p>
     </nav>
   );
 };

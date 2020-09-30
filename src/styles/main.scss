@@ -10,11 +10,22 @@ body {
   color: #fff;
 }
 
+li {
+  list-style: none;
+}
+
 .container {
   max-width: 500px;
   background: #0c307465;
   margin: 4rem auto;
   border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.empty {
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
 }
 
 .navbar {
@@ -24,5 +35,72 @@ body {
 
   h1 {
     margin-bottom: 0.5rem;
+  }
+}
+
+.book-list {
+
+  li {
+    background: #0c307480;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  
+    &:hover {
+      opacity: 0.8;
+      text-decoration: line-through;
+    }
+  }
+
+  .title {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .author {
+    color: #ddd;
+  }
+}
+
+form {
+  padding: 1.2rem;
+
+  input[type="text"]{
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background: #0c307465;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+
+  input[type="submit"]{
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      background: #0c307465; 
+      color: #fff;
+    }
+
+    &:active {
+      position: relative;
+      top: 2px;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import uuidv4 from "uuidv4";
+import { v4 as uuidv4 } from "uuid";
 
 export const BookContext = createContext();
 
@@ -19,9 +19,11 @@ const BookContextProvider = ({ children }) => {
     });
   };
 
-  <BookContext.Provider value={(books, addBook, deleteBook)}>
-    {children}
-  </BookContext.Provider>;
+  return (
+    <BookContext.Provider value={{ books, addBook, deleteBook }}>
+      {children}
+    </BookContext.Provider>
+  );
 };
 
 export default BookContextProvider;
